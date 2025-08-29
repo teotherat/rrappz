@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>All Produk Rappzmodzz</title>
+
+<style>
+  :root {
+    --primary: #00f7ff;
+    --secondary: #ff00f7;
+    --dark: #0a0a20;
+    --darker: #050510;
+    --light: #e0e0ff;
+  }
+  * {margin:0;padding:0;box-sizing:border-box;font-family:'Orbitron','Courier New',monospace;}
+  body {background:var(--darker);color:var(--light);}
+  header {padding:1.5rem 2rem;display:flex;justify-content:space-between;align-items:center;
+    border-bottom:1px solid rgba(0,247,255,0.3);background:rgba(10,10,32,0.8);position:sticky;top:0;z-index:20;}
+  .logo{display:flex;align-items:center;gap:1rem;}
+  .logo img{width:40px;height:40px;filter:drop-shadow(0 0 3px var(--primary));}
+  .logo-text{font-size:1.5rem;font-weight:bold;background:linear-gradient(90deg,var(--primary),var(--secondary));
+    -webkit-background-clip:text;color:transparent;}
+  nav ul{display:flex;gap:1.5rem;list-style:none;}
+  nav a{color:var(--light);text-decoration:none;font-weight:bold;position:relative;}
+  nav a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:linear-gradient(90deg,var(--primary),var(--secondary));transition:.3s;}
+  nav a:hover::after{width:100%;}
+  .hero{min-height:80vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:2rem;}
+  .hero h1{font-size:3rem;margin-bottom:1rem;text-shadow:0 0 20px var(--primary);}
+  .hero p{font-size:1.3rem;max-width:700px;margin-bottom:2rem;}
+  .cta-button{background:linear-gradient(45deg,var(--primary),var(--secondary));color:var(--dark);
+    border:none;padding:.6rem 1.4rem;border-radius:40px;font-weight:bold;cursor:pointer;transition:.3s;margin-top:.5rem;}
+  .cta-button:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,247,255,0.3);}
+  section{padding:4rem 2rem;}
+  .section-title{text-align:center;font-size:2rem;margin-bottom:2rem;color:var(--primary);}
+  .product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;max-width:1200px;margin:0 auto;}
+  .product-card{background:rgba(20,20,40,0.7);border:1px solid rgba(0,247,255,0.2);border-radius:12px;padding:2rem;text-align:center;transition:.3s;}
+  .product-card:hover{transform:translateY(-5px);border-color:var(--primary);box-shadow:0 8px 20px rgba(0,247,255,0.2);}
+  .product-name{font-size:1.3rem;margin-bottom:.5rem;color:var(--primary);}
+  .product-price{font-size:1.5rem;margin-bottom:1rem;color:var(--secondary);}
+  .product-features{list-style:none;text-align:left;margin-bottom:1rem;font-size:.9rem;}
+  .product-features li{margin-bottom:.4rem;padding-left:1rem;position:relative;}
+  .product-features li::before{content:"▹";position:absolute;left:0;color:var(--primary);}
+  #gallery .product-grid img{border-radius:10px;border:1px solid rgba(0,247,255,0.2);transition:.3s;}
+  #gallery .product-grid img:hover{transform:scale(1.05);}
+  .panel{max-width:800px;margin:0 auto;background:rgba(20,20,40,0.6);padding:2rem;border-radius:12px;border:1px solid rgba(0,247,255,0.2);}
+  .panel p{margin:.5rem 0;}
+  footer{text-align:center;padding:2rem;background:rgba(10,10,32,0.8);border-top:1px solid rgba(0,247,255,0.3);}
+  form label{display:block;margin:.5rem 0 .2rem;}
+  form input,form select,form textarea{width:100%;padding:.6rem;border-radius:8px;border:1px solid rgba(0,247,255,0.3);background:rgba(10,10,32,0.8);color:var(--light);margin-bottom:1rem;}
+  /* Popup */
+  #popup {position:fixed;top:20px;right:20px;background:rgba(0,247,255,0.95);color:#000;padding:1rem 1.5rem;border-radius:10px;
+          box-shadow:0 4px 12px rgba(0,0,0,0.4);display:none;z-index:1000;font-weight:bold;cursor:pointer;}
+</style>
+
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="https://files.catbox.moe/rc1xqi.jpg" alt="Rappz Logo">
+    <div class="logo-text">Rappzmodzz</div>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#payment">Payment</a></li>
+      <li><a href="#order">Order</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <h1>Selamat Datang Di Produk Rappzmodzz</h1>
+  <p>Solusi Digital terbaik untuk website Anda. Aman, cepat, dan dukungan penuh 24/7.</p>
+  <button class="cta-button" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Lihat Paket</button>
+</section>
+
+<section id="products">
+  <h2 class="section-title">Produk Rappzmodzz</h2>
+  <div class="product-grid">
+    <div class="product-card"><h3 class="product-name">Partner Pribadi</h3><div class="product-price">40.000<span>/RP</span></div><ul class="product-benefit"><li>get Benefit? </li><li>Benefit:
+- Get Akses Reseller
+- Get Reseller Voltra
+- Get Reseller Zetza
+- Get Reseller Zuroku
+- Get Reseller X-vallow
+- Get Reseller Mikasa
+- Get Partner Natzu
+- Bisa jual no up dan Full up
+- bisa add token sendiri</li></ul><button class="cta-button" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">Pesan</button></div>
+    <div class="product-card"><h3 class="product-name">Staff Pribadi</h3><div class="product-price">70.000<span>/RP</span></div><ul class="product-benefit"><li>benefit?</li><li>Benefit:
+- Get Akses Reseller
+- Get Partner Voltra
+- Get Partner Zetza
+- Get Partner Zuroku
+- Get Partner X-vallow
+- Get Partner Mikasa
+- Get Partner Natzu
+- Bisa jual no up dan Full up
+- bisa add token sendiri</li><button class="cta-button" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">Pesan</button></div>
+    <div class="product-card"><h3 class="product-name">Pt Function</h3><div class="product-price">45.000<span>/RP</span></div><ul class="product-benfit"><li>Band riper</li><li>Benefit?</li><li>- Get Forclose
+- Get Delay Invis
+- Get Blank
+- Get Freeze Home
+- Get Stuck logo</li></ul><button class="cta-button" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">Pesan</button></div>
+    <div class="product-card"><h3 class="product-name">Jasa pembuatan website payment</h3><div class="product-price">15.000<span>/RP</span></div><ul class="benefit"><li>mempermudah saat berdagang</li><li>dapat html web nya</li><li>Di ajarin juga</li></ul><button class="cta-button" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">Pesan</button></div>
+    <div class="product-card"><h3 class="product-name">Aplikasi Bug Darknes</h3><div class="product-price">35.000-50.000<span>/RP</span></div><ul class="product-benefit"><li>35.000 30$</li><li>50.000 PERMANEN</li><li>Free panel unli</li></ul><button class="cta-button" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">Pesan</button></div>
+    <div class="product-card"><h3 class="product-name">Reseller SC sasuke</h3><div class="product-price">100.000<span>/RP</span></div><ul class="product-benefit"><li>Bisa jual SC sasuke</li><li>admin di gb buyer/po</li><li>Free panel unli</li></ul><button class="cta-button" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">Pesan</button></div>
+    <div class="product-card"><h3 class="product-name">Jasa pembuatan SC bot bug</h3><div class="product-price">40.000<span>/RP</span></div><ul class="product-benefit"><li>di buatkan SC yang lu mau</li><li>Bisa lu jual lagi</li><li>Dapat NO enc nya</li></ul><button class="cta-button" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">Pesan</button></div>
+    <div class="product-card"><h3 class="product-name">Partner pribadi</h3><div class="product-price">50.000<span>/RP</span></div><ul class="product-benefit"><li>Dapat semua benefit</li><li>Di admin in All ch</li><li>DI bantu naikin nama</li></ul><button class="cta-button" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">Pesan</button></div>
+  </div>
+</section>
+
+<section id="services">
+  <h2 class="section-title">Services</h2>
+  <div class="product-grid">
+    <div class="product-card"><h3 class="product-name">🌐 Web Hosting</h3><p>Hosting cepat & aman untuk semua kebutuhan.</p></div>
+    <div class="product-card"><h3 class="product-name">💻 VPS Server</h3><p>Server virtual dengan full akses root.</p></div>
+    <div class="product-card"><h3 class="product-name">🔒 Domain & SSL</h3><p>Pendaftaran domain + sertifikat SSL gratis.</p></div>
+    <div class="product-card"><h3 class="product-name">🛠️ Maintenance</h3><p>Support & perawatan server 24/7.</p></div>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2 class="section-title">Gallery</h2>
+  <div class="product-grid">
+    <img src="https://picsum.photos/400/250?random=1" alt="Gallery 1">
+    <img src="https://picsum.photos/400/250?random=2" alt="Gallery 2">
+    <img src="https://picsum.photos/400/250?random=3" alt="Gallery 3">
+    <img src="https://picsum.photos/400/250?random=4" alt="Gallery 4">
+  </div>
+</section>
+
+<section id="payment">
+  <h2 class="section-title">Payment</h2>
+  <div class="product-grid">
+    <div class="product-card">
+      <h3>DANA</h3>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/DANA_logo.png" alt="DANA" width="120">
+      <p>085716593471 A.R. Kokom</p>
+      <button class="cta-button" onclick="copyNumber('085716593471')">Copy Nomor</button>
+    </div>
+    <div class="product-card">
+      <h3>QRIS</h3>
+      <img src="https://files.catbox.moe/s3u9rn.jpg" alt="QRIS" width="150">
+      <p>Scan QR untuk bayar cepat</p>
+      <a href="https://files.catbox.moe/s3u9rn.jpg" download="QRIS_Rappzmodzz.jpg" class="cta-button">Download QRIS</a>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:2rem;">
+    <button class="cta-button" onclick="window.open('https://t.me/Rappzmodzz','_blank')">Konfirmasi via Telegram</button>
+  </div>
+</section>
+
+<section id="order">
+  <h2 class="section-title">Form Order</h2>
+  <div class="panel">
+    <form onsubmit="sendTelegram(event)">
+      <label>Nama</label>
+      <input type="text" id="name" required>
+      <label>Email</label>
+      <input type="email" id="email" required>
+      <label>Pilih Paket</label>
+      <select id="package">
+        <option>Starter</option><option>Basic</option><option>Standard</option><option>Professional</option>
+        <option>Business</option><option>Premium</option><option>Enterprise</option><option>Ultimate</option>
+      </select>
+      <label>Pesan</label>
+      <textarea id="message" rows="4"></textarea>
+      <button type="submit" class="cta-button">Kirim ke Telegram</button>
+    </form>
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="section-title">Contact</h2>
+  <div class="panel">
+    <p>Email: rappz455@gmail.com</p>
+    <p>WhatsApp: <a href="https://wa.me/628971631405" target="_blank" style="color:var(--primary)">+628971631405</a></p>
+    <p>Telegram: <a href="https://t.me/Rappzmodzz" target="_blank" style="color:var(--primary)">@Rappzmodzz</a></p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Rappzmodzz. All rights reserved.</p>
+</footer>
+
+<div id="popup">✅ Pesanan berhasil dikirim ke Telegram</div>
+
+<script>
+function sendTelegram(e){
+  e.preventDefault();
+  const name=document.getElementById('name').value;
+  const email=document.getElementById('email').value;
+  const pack=document.getElementById('package').value;
+  const msg=document.getElementById('message').value;
+  const text = `Order Baru 🚀%0A`+
+               `Nama: ${name}%0A`+
+               `Email: ${email}%0A`+
+               `Paket: ${pack}%0A`+
+               `Pesan: ${msg}`;
+  window.open(`https://t.me/Rapppzmodzz?text=${text}`,'_blank');
+  showPopup("✅ Pesanan berhasil dikirim ke Telegram");
+}
+function showPopup(message){
+  const popup=document.getElementById('popup');
+  popup.innerText=message;
+  popup.style.display='block';
+  setTimeout(()=>{popup.style.display='none';},3000);
+}
+function copyNumber(number){
+  navigator.clipboard.writeText(number);
+  showPopup("📋 Nomor berhasil disalin: " + number);
+}
+document.addEventListener('click', function(event){
+  const popup=document.getElementById('popup');
+  if(popup.style.display==='block' && !popup.contains(event.target)){
+    popup.style.display='none';
+  }
+});
+</script>
+
+</body>
+</html>
